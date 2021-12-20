@@ -82,7 +82,7 @@ def get_inverse_propensity_weighted_count_of_predictions(
     return propensity_weighted_count
 
 
-def calculate_pu_propensity_confidence_unbiased_from_df_cache(
+def calculate_inverse_propensity_weighted_confidence_from_df_cache(
         df_cached_predictions: pd.DataFrame,
         rule_head: PyloAtom,
         pylo_context: PyloContext,
@@ -90,6 +90,17 @@ def calculate_pu_propensity_confidence_unbiased_from_df_cache(
         verbose: bool = False,
         o_propensity_score_per_prediction: Optional[pd.Series] = None
 ) -> Optional[float]:
+    """
+    Calculate the Inverse Propensity Weighted confidence (IPW).
+    :param df_cached_predictions:
+    :param rule_head:
+    :param pylo_context:
+    :param propensity_score_controller:
+    :param verbose:
+    :param o_propensity_score_per_prediction:
+    :return:
+    """
+
     n_predictions: int = len(df_cached_predictions)
     if n_predictions > 0:
         mask_supported_predictions = df_cached_predictions['is_supported']
@@ -108,7 +119,7 @@ def calculate_pu_propensity_confidence_unbiased_from_df_cache(
             weighted_known_positives: float = float(o_propensity_score_per_prediction[mask_supported_predictions].sum())
 
         if verbose and weighted_known_positives > n_predictions:
-            print(f"WARNING: e-conf est > 1: {weighted_known_positives} / {n_predictions}")
+            print(f"WARNING: IPW conf est > 1: {weighted_known_positives} / {n_predictions}")
 
         pu_confidence: float = weighted_known_positives / n_predictions
         return pu_confidence

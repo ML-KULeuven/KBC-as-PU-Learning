@@ -5,8 +5,8 @@ import pandas as pd
 
 from kbc_pul.data_structures.pandas_kb import PandasKnowledgeBaseWrapper
 from kbc_pul.data_structures.rule_wrapper import RuleWrapper
-from kbc_pul.rule_metrics.prediction_cache_rule_metrics.rule_metrics_from_cached_predictions import \
-    set_rule_wrapper_metrics_from_cache
+from kbc_pul.rule_metrics.prediction_cache_rule_metrics.rule_cwa_and_pca_confidences_from_cached_predictions import \
+    set_rule_wrapper_cwa_and_pca_confidence_calculated_from_cache
 from kbc_pul.test.rule_wrapper_testing_utils import get_rule_wrapper_from_str_repr
 
 
@@ -38,7 +38,7 @@ class TestingRegularConfidenceMetrics(unittest.TestCase):
         )
         df_prediction_cache: Optional[pd.DataFrame] = kb_wrapper.calculate_prediction_cache_for_rule(
             rule=self.rule_wrapper.rule)
-        set_rule_wrapper_metrics_from_cache(
+        set_rule_wrapper_cwa_and_pca_confidence_calculated_from_cache(
             rule_wrapper=self.rule_wrapper,
             df_cached_predictions=df_prediction_cache
         )

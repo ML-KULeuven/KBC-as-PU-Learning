@@ -3,11 +3,12 @@ from typing import Optional
 import pandas as pd
 from pylo.language.lp import Atom as PyloAtom, Context as PyloContext
 
-from kbc_pul.rule_metrics.prediction_cache_rule_metrics.rule_pu_confidence_unbiased_from_cached_predictions import \
+from kbc_pul.rule_metrics.prediction_cache_rule_metrics.rule_ipw_confidence_from_cached_predictions import \
     get_inverse_propensity_weighted_count_of_predictions
 
 
-def calculate_pu_propensity_confidence_pca_from_df_cache(
+# def calculate_pu_propensity_confidence_pca_from_df_cache(
+def calculate_inverse_propensity_weighted_pca_confidence_from_df_cache(
         df_cached_predictions: pd.DataFrame,
         rule_head: PyloAtom,
         pylo_context: PyloContext,
@@ -16,6 +17,20 @@ def calculate_pu_propensity_confidence_pca_from_df_cache(
         verbose: bool = False,
         o_propensity_score_per_prediction: Optional[pd.Series] = None
 ) -> Optional[float]:
+    """
+    Calculate the Inverse Propensity Weighted PCA-based confidence (IPW-PCA).
+
+
+    :param df_cached_predictions:
+    :param rule_head:
+    :param pylo_context:
+    :param predict_object_entity:
+    :param propensity_score_controller:
+    :param verbose:
+    :param o_propensity_score_per_prediction:
+    :return:
+    """
+
     if len(df_cached_predictions) > 0:
         if predict_object_entity:
             pca_negatives_column_name = 'exists_lits_same_subject'
@@ -51,7 +66,7 @@ def calculate_pu_propensity_confidence_pca_from_df_cache(
         weighted_denominator: float = weighted_known_positives + weighted_pca_negatives
         if weighted_denominator == 0:
             if verbose:
-                print(f"Cannot compute unbiased PU conf,\n"
+                print(f"Cannot compute IPW-PCA conf,\n"
                       f"\t{weighted_known_positives} weighted known positives,"
                       f" {weighted_pca_negatives} weigthed PCA negatives")
             return None

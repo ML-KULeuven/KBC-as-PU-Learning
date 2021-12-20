@@ -13,7 +13,7 @@ from kbc_pul.data_structures.rule_wrapper import RuleWrapper
 # ]
 
 
-def set_rule_wrapper_metrics_from_cache(
+def set_rule_wrapper_cwa_and_pca_confidence_calculated_from_cache(
         rule_wrapper: RuleWrapper,
         df_cached_predictions: pd.DataFrame
 ) -> None:
