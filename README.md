@@ -4,3 +4,133 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/):
 
 > Unifying Knowledge Base Completion with PU Learning to Mitigate the Observation Bias. 
 > Jonas Schouterden, Jessa Bekker, Jesse Davis, Hendrik Blockeel. 
+
+## Table of Contents
+
+
+## Files to run for Experiments
+
+### Minimal working examples
+
+kbc_e_metrics_src/artificial_bias_experiments/known_prop_scores/scar/experiment_running/run_exp_min_working_ex.py
+
+## Files to run to get paper tables
+
+
+notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb
+
+## Paper images
+Python files:
+
+
+### Non-PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per-group i.f.o. changing known propensity scores (Fig 5)
+In the paper, Figure 5 shows the behavior of a single non-recursive rule under SCAR-per-predicate and SAR-per-group 
+for the following confidence measures:
+* true confidence `conf(R)`,
+* Inverse propensity weighted confidence estimator `IPW(R)`,
+* CWA-based estimator (*standard confidence*) `CWA(R)`,
+* Inverse-c-weighted CWA-based estimator `ICW(R)`
+
+when varying the known propensity scores.
+To generate this figure, run the following file:
+
+```shell
+artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_run_yago3_10.py
+```
+Which uses:
+
+artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_joint_images.py
+
+Amongs others, this results in the following file, which is Figure 5 in the paper: 
+
+[`images/joint_images/known_prop_scores_cwa_conf/cwa_conf_evolution/non_recursive_rules/cwa_evol_created_haswonprize_created(A,B) :- directed(A,B).png`](./images/joint_images/known_prop_scores_cwa_conf/cwa_conf_evolution/non_recursive_rules/cwa_evol_created_haswonprize_created(A,B) :- directed(A,B).png)
+
+![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/joint_images/known_prop_scores_cwa_conf/cwa_conf_evolution/non_recursive_rules/cwa_evol_created_haswonprize_created(A,B) :- directed(A,B).png)
+
+
+### PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per group i.f.o. changing known propensity scores (Fig 6)
+
+In the paper, Figure 6 shows the behavior of a single non-recursive rule under SCAR-per-predicate and SAR-per-group 
+for the following confidence measures, for both the predicted predicate `p` and its inverse `p^{-1}`:
+* true confidence `conf(R)`:
+  * unmodified
+  * rescaled with bias_{y(s)=0}=\frac{|R|}{|R^{s}_{s}|},
+* PCA-based confidence measure `PCA(R)`,
+* Inverse propensity weighted PCA estimator `IPW_PCA(R)`,
+
+* when varying the known propensity scores.
+
+To generate this figure, run the following file:
+```shell
+artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_run_yago3_10.py
+```
+Which uses:
+artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_joint_images.py
+
+Amongs others, this results in the following file, which is Figure 5 in the paper: 
+
+[`./images/joint_images/known_prop_scores_cwa_conf/pca_conf_evolution/non_recursive_rules/pca_evol_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png`](./images/joint_images/known_prop_scores_cwa_conf/pca_conf_evolution/non_recursive_rules/pca_evol_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png)
+
+![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/joint_images/known_prop_scores_cwa_conf/pca_conf_evolution/non_recursive_rules/pca_evol_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png)
+
+
+### (Fig. 7)
+Run:
+```shell
+artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combo_for_yago3_10_less_detailed.py
+
+```
+
+which uses: 
+
+`artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combined_group_difference_and_pca_selection_conf_evolution_less_detailed.py`
+to obtain:
+[./images/artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/pca_version/yago3_10/s0.5/combo_group_info_pca_selection_conf_evol_less_detailed/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png](./images/artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/pca_version/yago3_10/s0.5/combo_group_info_pca_selection_conf_evol_less_detailed/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png)
+
+
+## Notebooks
+
+## Requirements
+
+* jupyter
+* pandas: representing the KB
+* problog : used for is parsing functionalty, i.e. parsing Prolog clauses from their string representation
+* pylo2: see below
+* matplotlib: plotting
+* seaborn
+* tqdm: status bars
+* unidecode: used when cleaning data
+* tabulate: for pretty table printouts
+
+## Installing Pylo2:
+```shell
+ git clone git@github.com:sebdumancic/pylo2.git
+ cd pylo2
+```
+Modify   `setup.py`. We don't need to have bindings to different Prolog engines, 
+as we only use Pylo for its data structures to represent Prolog clauses. Thus,  in `setup.py` right before the line:
+```python
+print(f"Building:\n\tGNU:{build_gnu}\n\tXSB:{build_xsb}\n\tSWIPL:{build_swi}")
+```
+add the following lines:
+```python
+build_gnu = None
+build_xsb = None
+build_swi = None
+```
+Then, install Pylo in the current environment using
+```shell
+python setup.py install
+```
+
+# Data preparation
+In the paper, the experiments are run on a cleaned version of the yago3-10 datasets. 
+We started from the data that can be obtained from Ampligraph,
+which can be found under [./data/yago3_10/original](./data/yago3_10/original). 
+The cleaned version can be found under [./data/yago3_10/cleaned_csv](./data/yago3_10/cleaned_csv). 
+The cleaning is done using [./notebooks/yago3_10/data_exploration_and_preparation/yago3_10_data_cleaning.ipynb](./notebooks/yago3_10/data_exploration_and_preparation/yago3_10_data_cleaning.ipynb)
+and is done to remove unicode characters that might be incompatible with older prolog engines.
+
+
+
+
