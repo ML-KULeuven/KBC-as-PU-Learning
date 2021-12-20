@@ -9,6 +9,9 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/):
 
 * [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
 * [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
+* [Generating the images in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-images-in-the-paper)
+
+
 ## Abstract
 The following is the abstract of our paper:
 
@@ -90,8 +93,9 @@ python setup.py install
 
 kbc_e_metrics_src/artificial_bias_experiments/known_prop_scores/scar/experiment_running/run_exp_min_working_ex.py
 
-## Files to run to get paper tables
 
+
+## Generating the tables in the paper
 
 notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb
 
