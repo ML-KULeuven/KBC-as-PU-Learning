@@ -55,7 +55,7 @@ Create a fresh Python3 environment (3. or higher) and install the following pack
 * unidecode: used when cleaning data.
 * tabulate: for pretty table printouts
 
-## Installing Pylo2:
+### Installing Pylo2:
 
 We use data structures from [Pylo2](https://github.com/sebdumancic/pylo2) to represent rules as Prolog clauses.
 More specifically, Pylo2 data structures from `src/pylo/language/lp` are often used. 
@@ -95,11 +95,11 @@ kbc_e_metrics_src/artificial_bias_experiments/known_prop_scores/scar/experiment_
 
 notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb
 
-## Paper images
-Python files:
+## Generating the images in the paper
 
 
 ### Non-PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per-group i.f.o. changing known propensity scores (Fig 5)
+
 In the paper, Figure 5 shows the behavior of a single non-recursive rule under SCAR-per-predicate and SAR-per-group 
 for the following confidence measures:
 * true confidence `conf(R)`,
@@ -113,10 +113,6 @@ To generate this figure, run the following file:
 ```shell
 artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_run_yago3_10.py
 ```
-Which uses:
-
-artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_joint_images.py
-
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
 ![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/cwa_evol_created_haswonprize_created.png)
@@ -138,9 +134,6 @@ To generate this figure, run the following file:
 ```shell
 artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_run_yago3_10.py
 ```
-Which uses:
-artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_joint_images.py
-
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
 ![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/pca_evol_diedin_isaffiliatedto.png)
@@ -152,9 +145,6 @@ Run:
 artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combo_for_yago3_10_less_detailed.py
 
 ```
-which uses: 
-
-`artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combined_group_difference_and_pca_selection_conf_evolution_less_detailed.py`
 to obtain:
 ![](./images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
 
