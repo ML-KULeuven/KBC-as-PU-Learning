@@ -50,7 +50,7 @@ Create a fresh Python3 environment (3. or higher) and install the following pack
 
 * jupyter: for the notebooks.
 * pandas: for representing the KB.
-* problog : used for is parsing functionalty, i.e. parsing Prolog clauses from their string representation
+* problog : used for its parsing functionalty, i.e. parsing Prolog clauses from their string representation
 * pylo2: see below
 * matplotlib: plotting
 * seaborn: plotting.
@@ -153,13 +153,16 @@ to obtain:
 ![](./images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
 
 
-# Data preparation
+# Preparation of the "ideal" Yago3_10 KB
+
 In the paper, the experiments are run on a cleaned version of the yago3-10 datasets. 
-We started from the data that can be obtained from Ampligraph,
-which can be found under [./data/yago3_10/original](./data/yago3_10/original). 
+The cleaning was done to remove unicode characters that might be incompatible with older prolog engines, 
+using [./notebooks/yago3_10/data_exploration_and_preparation/yago3_10_data_cleaning.ipynb](./notebooks/yago3_10/data_exploration_and_preparation/yago3_10_data_cleaning.ipynb)
+
+The original data was obtained using [AmpliGraph](https://docs.ampligraph.org/en/1.4.0/generated/ampligraph.datasets.load_yago3_10.html),
+but can also be found under [./data/yago3_10/original](./data/yago3_10/original). 
+
 The cleaned version can be found under [./data/yago3_10/cleaned_csv](./data/yago3_10/cleaned_csv). 
-The cleaning is done using [./notebooks/yago3_10/data_exploration_and_preparation/yago3_10_data_cleaning.ipynb](./notebooks/yago3_10/data_exploration_and_preparation/yago3_10_data_cleaning.ipynb)
-and is done to remove unicode characters that might be incompatible with older prolog engines.
 
 
 
