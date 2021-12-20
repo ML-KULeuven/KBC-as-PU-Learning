@@ -9,6 +9,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/):
 
 * [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
 * [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
+* [Notebooks](https://github.com/ML-KULeuven/KBC-as-PU-Learning#notebooks)
 * [Generating the images in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-images-in-the-paper)
 * [Preparation of the "ideal" Yago3-10 KB](https://github.com/ML-KULeuven/KBC-as-PU-Learning#preparation-of-the-ideal-yago3_10-kb)
 
@@ -68,8 +69,8 @@ To install Pylo2 in your Python environment, first clone it:
  cd pylo2
 ```
 Note that Pylo has a lot of functionality we don't need. 
-As don't use any bindings to different Prolog engines, we don't need those bindings. 
-To install Pylo2 without thise bindings, modify its `setup.py` by ading right before the line:
+As we don't Pylo´s bindings to Prolog engines, we don't need those bindings. 
+To install Pylo2 without these bindings, modify its `setup.py` by ading right before the line:
 ```python
 print(f"Building:\n\tGNU:{build_gnu}\n\tXSB:{build_xsb}\n\tSWIPL:{build_swi}")
 ``` 
@@ -86,6 +87,10 @@ python setup.py install
 
 ## Notebooks
 
+Different notebooks are provided:
+* [How to run AMIE from Python](./notebooks/amie_general)
+* [The yago3-10 dataset: cleaning & exploartion](./notebooks/amie_general)
+* [How to apply a rule to a KB](./notebooks/pandas_rule_evaluation/how_to_apply_a_rule_to_a_pandas_kb.ipynb)
 
 ## Files to run for Experiments
 
