@@ -8,7 +8,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/):
 ## Table of Contents
 
 * [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
-
+* [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
 ## Abstract
 The following is the abstract of our paper:
 
@@ -38,6 +38,51 @@ fact is to be included the KB. (3) We show through theoret-
 ical and empirical analysis that taking the bias into account
 improves the confidence estimates, even when the propensity
 scores are not known exactly.
+
+## Installation
+
+### Requirements
+
+Create a fresh Python3 environment (3. or higher) and install the following packages:
+
+* jupyter: for the notebooks.
+* pandas: for representing the KB.
+* problog : used for is parsing functionalty, i.e. parsing Prolog clauses from their string representation
+* pylo2: see below
+* matplotlib: plotting
+* seaborn: plotting.
+* tqdm: pretty status bars.
+* unidecode: used when cleaning data.
+* tabulate: for pretty table printouts
+
+## Installing Pylo2:
+
+We use data structures from [Pylo2](https://github.com/sebdumancic/pylo2) to represent rules as Prolog clauses.
+More specifically, Pylo2 data structures from `src/pylo/language/lp` are often used. 
+To install Pylo2 in your Python environment, first clone it:
+```shell
+ git clone git@github.com:sebdumancic/pylo2.git
+ cd pylo2
+```
+Note that Pylo has a lot of functionality we don't need. 
+As don't use any bindings to different Prolog engines, we don't need those bindings. 
+To install Pylo2 without thise bindings, modify its `setup.py` by ading right before the line:
+```python
+print(f"Building:\n\tGNU:{build_gnu}\n\tXSB:{build_xsb}\n\tSWIPL:{build_swi}")
+``` 
+the following lines:
+```python
+build_gnu = None
+build_xsb = None
+build_swi = None
+```
+Then, install Pylo in the current environment using
+```shell
+python setup.py install
+```
+
+## Notebooks
+
 
 ## Files to run for Experiments
 
@@ -113,41 +158,6 @@ which uses:
 to obtain:
 ![](./images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
 
-
-## Notebooks
-
-## Requirements
-
-* jupyter
-* pandas: representing the KB
-* problog : used for is parsing functionalty, i.e. parsing Prolog clauses from their string representation
-* pylo2: see below
-* matplotlib: plotting
-* seaborn
-* tqdm: status bars
-* unidecode: used when cleaning data
-* tabulate: for pretty table printouts
-
-## Installing Pylo2:
-```shell
- git clone git@github.com:sebdumancic/pylo2.git
- cd pylo2
-```
-Modify   `setup.py`. We don't need to have bindings to different Prolog engines, 
-as we only use Pylo for its data structures to represent Prolog clauses. Thus,  in `setup.py` right before the line:
-```python
-print(f"Building:\n\tGNU:{build_gnu}\n\tXSB:{build_xsb}\n\tSWIPL:{build_swi}")
-```
-add the following lines:
-```python
-build_gnu = None
-build_xsb = None
-build_swi = None
-```
-Then, install Pylo in the current environment using
-```shell
-python setup.py install
-```
 
 # Data preparation
 In the paper, the experiments are run on a cleaned version of the yago3-10 datasets. 
