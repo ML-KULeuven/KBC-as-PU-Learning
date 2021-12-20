@@ -43,9 +43,7 @@ artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_co
 
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
-[`images/joint_images/known_prop_scores_cwa_conf/cwa_conf_evolution/non_recursive_rules/cwa_evol_created_haswonprize_created(A,B) :- directed(A,B).png`](./images/joint_images/known_prop_scores_cwa_conf/cwa_conf_evolution/non_recursive_rules/cwa_evol_created_haswonprize_created(A,B) :- directed(A,B).png)
-
-![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/joint_images/known_prop_scores_cwa_conf/cwa_conf_evolution/non_recursive_rules/cwa_evol_created_haswonprize_created(A,B) :- directed(A,B).png)
+![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/cwa_evol_created_haswonprize_created.png)
 
 
 ### PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per group i.f.o. changing known propensity scores (Fig 6)
@@ -69,23 +67,20 @@ artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_co
 
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
-[`./images/joint_images/known_prop_scores_cwa_conf/pca_conf_evolution/non_recursive_rules/pca_evol_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png`](./images/joint_images/known_prop_scores_cwa_conf/pca_conf_evolution/non_recursive_rules/pca_evol_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png)
-
-![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/joint_images/known_prop_scores_cwa_conf/pca_conf_evolution/non_recursive_rules/pca_evol_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png)
+![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/pca_evol_diedin_isaffiliatedto.png)
 
 
-### (Fig. 7)
+### Effect of the bias_e(s) on the (IPW-)PCA estimators under PCA i.f.o. varying propensity scores (Fig. 7)
 Run:
 ```shell
 artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combo_for_yago3_10_less_detailed.py
 
 ```
-
 which uses: 
 
 `artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combined_group_difference_and_pca_selection_conf_evolution_less_detailed.py`
 to obtain:
-[./images/artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/pca_version/yago3_10/s0.5/combo_group_info_pca_selection_conf_evol_less_detailed/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png](./images/artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/pca_version/yago3_10/s0.5/combo_group_info_pca_selection_conf_evol_less_detailed/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto_diedin(A,B) :- haschild(A,H),wasbornin(H,B).png)
+![](./images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
 
 
 ## Notebooks
