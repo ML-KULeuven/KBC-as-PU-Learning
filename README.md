@@ -7,6 +7,37 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/):
 
 ## Table of Contents
 
+* [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
+
+## Abstract
+The following is the abstract of our paper:
+
+> Methods for Knowledge Base Completion (KBC) reason about
+a knowledge base (KB) in order to derive new facts that should
+be included in the KB. This is challenging for two reasons.
+First, KBs only contain positive examples. This complicates
+model evaluation which needs both positive and negative ex-
+amples. Second, those facts that were selected to be included
+in the knowledge base, are most likely not an i.i.d. sample of
+the true facts, due to the way knowledge bases are constructed.
+In this paper, we focus on rule-based approaches, which tradi-
+tionally address the first challenge by making assumptions that
+enable identifying negative examples, which in turn makes it
+possible to compute a rule’s confidence or precision. However,
+they largely ignore the second challenge, which means that
+their estimates of a rule’s confidence can be biased. This paper
+approaches rule-based KBC through the lens of PU learning,
+which can cope with both challenges. We make three contri-
+butions. (1) We provide a unifying view that formalizes the
+relationship between multiple existing confidences measures
+based on (i) what assumption they make about and (ii) how
+their accuracy depends on the selection mechanism. (2) We in-
+troduce two new confidence measures that can mitigate known
+biases by using propensity scores that quantify how likely a
+fact is to be included the KB. (3) We show through theoret-
+ical and empirical analysis that taking the bias into account
+improves the confidence estimates, even when the propensity
+scores are not known exactly.
 
 ## Files to run for Experiments
 
