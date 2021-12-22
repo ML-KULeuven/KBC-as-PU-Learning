@@ -11,7 +11,7 @@ which results in the file:
 ## Appendix (Table 3) - Results for Q1 & Q2 averaged per predicate - SCAR_p
 
 To obtain this table, run:
-[noisy_prop_scores_scar.ipynb](notebooks/artificial_bias_experiments/noisy_prop_scores/scar/table/noisy_prop_scores_scar.ipynb)
+[noisy_prop_scores_scar.ipynb](../notebooks/artificial_bias_experiments/noisy_prop_scores/scar/table/noisy_prop_scores_scar.ipynb)
 to obtain:
 [confidence-error-table-scar-rerun-agg-per-p.tex](../paper_latex_tables/known_prop_scores/scar/confidence-error-table-scar-rerun-agg-per-p.tex)
 
