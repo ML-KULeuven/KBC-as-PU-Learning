@@ -8,6 +8,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/) paper
 ## Table of Contents
 
 * [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
+* [Contents of this repository](https://github.com/ML-KULeuven/KBC-as-PU-Learning#contents-of-this-repository)
 * [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
 * [Notebooks](https://github.com/ML-KULeuven/KBC-as-PU-Learning#notebooks)
 * [Running the experiemtns](https://github.com/ML-KULeuven/KBC-as-PU-Learning#running-the-experiments)
@@ -19,6 +20,22 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/) paper
 The following is the abstract of our paper:
 
 > Methods for Knowledge Base Completion (KBC) reason about a knowledge base (KB) in order to derive new facts that should be included in the KB. This is challenging for two reasons. First, KBs only contain positive examples. This complicates model evaluation which needs both positive and negative examples. Second, those facts that were selected to be included in the knowledge base, are most likely not an i.i.d. sample of the true facts, due to the way knowledge bases are constructed. In this paper, we focus on rule-based approaches, which traditionally address the first challenge by making assumptions that enable identifying negative examples, which in turn makes it possible to compute a rule’s confidence or precision. However, they largely ignore the second challenge, which means that their estimates of a rule’s confidence can be biased. This paper approaches rule-based KBC through the lens of PU learning, which can cope with both challenges. We make three contributions. (1) We provide a unifying view that formalizes the relationship between multiple existing confidences measures based on (i) what assumption they make about and (ii) how their accuracy depends on the selection mechanism. (2) We introduce two new confidence measures that can mitigate known biases by using propensity scores that quantify how likely a fact is to be included the KB. (3) We show through theoretical and empirical analysis that taking the bias into account improves the confidence estimates, even when the propensity scores are not known exactly.
+
+## Contents of this repository
+
+* [artificial_bias_experiments](./artificial_bias_experiments): Python source code root module for running the experiments & generating images about those experiments.
+* [dask_utils](./dask_utils): Python code for using dask when running the experiments.
+* [data/yago3_10](./data/yago3_10): The yago3-10 dataset. This data directory is also used as root for everything generated when running the experiments.
+* [external/AMIE3](./external/AMIE3): External dependency: the AMIE-jar. See also the [AMIE3 repository](https://github.com/lajus/amie).
+* [images](./images): Root directory for all images.
+* [kbc_pul](./kbc_pul): Python source code root module containing the core of this repository: everything related to rules, knowledge bases, confidence metrics and selection mechanisms. 
+* [notebooks](./notebooks): Jupyter notebooks as illustration on how to do some things.
+* [notes](./notes): Markdown files describing this repository.
+* [paper](./paper): PDF of the AAAI paper and its appendices.
+* [paper_latex_tables](./paper_latex_tables): Tables used in the paper in LaTex.
+* [amie_dir.json](./amie_dir.json): Settings file used by our AMIE Python wrapper pointing to the AMIE jar.
+* [LICENSE](./LICENSE)
+* [README](./README.md)
 
 ## Installation
 
