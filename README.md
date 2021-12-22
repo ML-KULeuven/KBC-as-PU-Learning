@@ -10,6 +10,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/) paper
 * [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
 * [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
 * [Notebooks](https://github.com/ML-KULeuven/KBC-as-PU-Learning#notebooks)
+* [Generating the tables in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-tables-in-the-paper)
 * [Generating the images in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-images-in-the-paper)
 * [Preparation of the "ideal" Yago3-10 KB](https://github.com/ML-KULeuven/KBC-as-PU-Learning#preparation-of-the-ideal-yago3_10-kb)
 
@@ -78,41 +79,8 @@ kbc_e_metrics_src/artificial_bias_experiments/known_prop_scores/scar/experiment_
 
 ## Generating the tables in the paper
 
-### Appendix (Table6) - The non-recursive rules
+For instructions to generate the tables in the paper from the results, see [here](./notes/how-to-generate-tables-in-paper.md).
 
-To obtain the table in the appendix listing all non-recursive rules, run:
-[notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb](notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb)
-which results in the file:
-[amie-rules-non-recursive.tex](tables-appendix/amie-rules-non-recursive.tex)
-
-
-### Table 1 - Results for Q1 & Q2, averaged over all predicates
-
-which results in the file:
-[](tables-experiments/summary/confidence-error-summary-selection-mechanisms.tex)
-
-
-### Table 2 - Aggregated results for Q3
-
-which results in the file:
-[](tables-experiments/SAR-PCA-groups/confidence-error-table-sar-two-subject-groups-pca_version-case-specific_agg-per-p.tex)
-
-### Appendix (Table 3) - Results for Q1 & Q2 averaged per predicate - SCAR_p
-
-[](tables-experiments/SCAR/confidence-error-table-scar-rerun-agg-per-p.tex)
-
-### Appendix (Table 4) - Results for Q1 & Q2 averaged per predicate - SAR_{group}
-
-[](tables-experiments/SAR/confidence-error-table-sar-two-subject-groups-agg-per-p.tex)
-
-### Appendix (Table 5)- Results for Q1 & Q2 averaged per predicate - SAR_{populariy}
-[](tables-experiments/SAR/confidence-error-table-sar-popularity-agg-per-p.tex)
-
-
-
-Notebooks to run:
-
-notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb
 
 ## Generating the images in the paper
 

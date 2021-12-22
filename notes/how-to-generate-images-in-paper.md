@@ -52,4 +52,5 @@ artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_gener
 
 ```
 to obtain:
-![](../images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
+
+![Effect of the bias_e(s) on the (IPW-)PCA estimators under PCA i.f.o. varying propensity scores](../images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
