@@ -3,7 +3,7 @@ from typing import List, Dict
 
 from kbc_pul.project_info import data_dir as kbc_pul_data_dir
 
-from artificial_bias_experiments.evaluation.finding_relation_overlap import \
+from artificial_bias_experiments.evaluation.sar_group_finding_relation_overlap import \
     get_target_relation_to_filter_relation_list_map_and_create_if_non_existent
 from artificial_bias_experiments.known_prop_scores.sar_two_subject_groups.experiment_info import \
     TargetFilterOverlapSettings
