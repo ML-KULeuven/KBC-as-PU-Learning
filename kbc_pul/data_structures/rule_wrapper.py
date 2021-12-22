@@ -89,9 +89,9 @@ class RuleWrapper:
 
         elif conf_name is ConfidenceEnum.TRUE_CONF:
             return self.o_true_confidence
-        elif conf_name is ConfidenceEnum.TRUE_CONF_STAR_S_TO_O:
+        elif conf_name is ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_S_TO_O:
             return self.o_true_pca_confidence_subject_to_object
-        elif conf_name is ConfidenceEnum.TRUE_CONF_STAR_O_TO_S:
+        elif conf_name is ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_O_TO_S:
             return self.o_true_pca_confidence_object_to_subject
 
         else:

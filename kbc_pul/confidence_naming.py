@@ -15,7 +15,7 @@ class ConfidenceEnum(Enum):
 
     # TRUE_CONF_STAR_S_TO_O = '$conf^*$ (S->O)'
     # TRUE_CONF_STAR_S_TO_O = '$conf^*$(S)'
-    TRUE_CONF_STAR_S_TO_O = '$\\frac{\left| \mathbf{R}\\right|}{\left| \mathbf{R_s}\\right|} conf$ $p$'
+    TRUE_CONF_BIAS_YS_ZERO_S_TO_O = '$\\frac{\left| \mathbf{R}\\right|}{\left| \mathbf{R_s}\\right|} conf$ $p$'
     # PCA_CONF_STAR_EST_S_TO_O = '$\widehat{conf^*}_{PCA}$ (S->O)'
     PCA_CONF_S_TO_O = 'PCA $p$'
     # E_PCA_CONF_STAR_EST_S_TO_O = '$\widehat{conf^*}_{e+PCA}$ (S->O)'
@@ -23,7 +23,7 @@ class ConfidenceEnum(Enum):
 
     # TRUE_CONF_STAR_O_TO_S = '$conf^*$ (O->S)'
     # TRUE_CONF_STAR_O_TO_S = '$conf^*$(O)'
-    TRUE_CONF_STAR_O_TO_S = '$\\frac{\left| \mathbf{R}\\right|}{\left| \mathbf{R_s}\\right|} conf$ $p^{-1}$'
+    TRUE_CONF_BIAS_YS_ZERO_O_TO_S = '$\\frac{\left| \mathbf{R}\\right|}{\left| \mathbf{R_s}\\right|} conf$ $p^{-1}$'
     # PCA_CONF_STAR_EST_O_TO_S = '$\widehat{conf^*}_{PCA}$ (O->S)'
     PCA_CONF_O_TO_S = 'PCA ${p^{-1}}$'
     # E_PCA_CONF_STAR_EST_O_TO_S = '$\widehat{conf^*}_{e+PCA}$ (O->S)'
@@ -42,7 +42,7 @@ class ConfidenceEnum(Enum):
 
     @staticmethod
     def get_true_confidences() -> List['ConfidenceEnum']:
-        return [ConfidenceEnum.TRUE_CONF, ConfidenceEnum.TRUE_CONF_STAR_S_TO_O, ConfidenceEnum.TRUE_CONF_STAR_O_TO_S]
+        return [ConfidenceEnum.TRUE_CONF, ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_S_TO_O, ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_O_TO_S]
 
     @staticmethod
     def get_estimators_of(true_confidence: 'ConfidenceEnum'):
@@ -54,12 +54,12 @@ class ConfidenceEnum(Enum):
                 ConfidenceEnum.PCA_CONF_S_TO_O,
                 ConfidenceEnum.PCA_CONF_O_TO_S,
             ]
-        elif true_confidence is ConfidenceEnum.TRUE_CONF_STAR_S_TO_O:
+        elif true_confidence is ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_S_TO_O:
             return [
                 ConfidenceEnum.PCA_CONF_S_TO_O,
                 ConfidenceEnum.IPW_PCA_CONF_S_TO_O
             ]
-        elif true_confidence is ConfidenceEnum.TRUE_CONF_STAR_O_TO_S:
+        elif true_confidence is ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_O_TO_S:
             return [
                 ConfidenceEnum.PCA_CONF_O_TO_S,
                 ConfidenceEnum.IPW_PCA_CONF_O_TO_S
@@ -72,7 +72,9 @@ class ConfidenceEnum(Enum):
 
     # def get_color(self):
 
-ConfidenceEnum._color_dict = {
+
+def get_color_dict_q1() -> Dict[ConfidenceEnum, str]:
+    return {
         ConfidenceEnum.IPW_CONF: matplotlib_color_name_to_hex("red"),
         ConfidenceEnum.CWA_CONF: matplotlib_color_name_to_hex("purple"),
         ConfidenceEnum.ICW_CONF: matplotlib_color_name_to_hex("orange"),
@@ -84,8 +86,8 @@ ConfidenceEnum._color_dict = {
         ConfidenceEnum.IPW_PCA_CONF_O_TO_S: matplotlib_color_name_to_hex("lime"),
 
         ConfidenceEnum.TRUE_CONF: matplotlib_color_name_to_hex("fuchsia"),
-        ConfidenceEnum.TRUE_CONF_STAR_S_TO_O: matplotlib_color_name_to_hex("navy"),
-        ConfidenceEnum.TRUE_CONF_STAR_O_TO_S: matplotlib_color_name_to_hex("darkgreen")
+        ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_S_TO_O: matplotlib_color_name_to_hex("navy"),
+        ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_O_TO_S: matplotlib_color_name_to_hex("darkgreen")
     }
 """
 #1b9e77
@@ -106,13 +108,13 @@ ConfidenceEnum._color_dict = {
         ConfidenceEnum.CWA_CONF: "#377eb8",
         ConfidenceEnum.ICW_CONF: "#4daf4a",
 
-        ConfidenceEnum.TRUE_CONF_STAR_S_TO_O: "#1b9e77",
+        ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_S_TO_O: "#1b9e77",
         ConfidenceEnum.PCA_CONF_S_TO_O: "#d95f02",
         ConfidenceEnum.IPW_PCA_CONF_S_TO_O: "#7570b3",
 
         ConfidenceEnum.PCA_CONF_O_TO_S: "#e7298a",
         ConfidenceEnum.IPW_PCA_CONF_O_TO_S: "#66a61e",
-        ConfidenceEnum.TRUE_CONF_STAR_O_TO_S: "#e6ab02",
+        ConfidenceEnum.TRUE_CONF_BIAS_YS_ZERO_O_TO_S: "#e6ab02",
     }
 
 

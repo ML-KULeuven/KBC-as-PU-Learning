@@ -16,32 +16,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/) paper
 ## Abstract
 The following is the abstract of our paper:
 
-> Methods for Knowledge Base Completion (KBC) reason about
-a knowledge base (KB) in order to derive new facts that should
-be included in the KB. This is challenging for two reasons.
-First, KBs only contain positive examples. This complicates
-model evaluation which needs both positive and negative ex-
-amples. Second, those facts that were selected to be included
-in the knowledge base, are most likely not an i.i.d. sample of
-the true facts, due to the way knowledge bases are constructed.
-In this paper, we focus on rule-based approaches, which tradi-
-tionally address the first challenge by making assumptions that
-enable identifying negative examples, which in turn makes it
-possible to compute a rule’s confidence or precision. However,
-they largely ignore the second challenge, which means that
-their estimates of a rule’s confidence can be biased. This paper
-approaches rule-based KBC through the lens of PU learning,
-which can cope with both challenges. We make three contri-
-butions. (1) We provide a unifying view that formalizes the
-relationship between multiple existing confidences measures
-based on (i) what assumption they make about and (ii) how
-their accuracy depends on the selection mechanism. (2) We in-
-troduce two new confidence measures that can mitigate known
-biases by using propensity scores that quantify how likely a
-fact is to be included the KB. (3) We show through theoret-
-ical and empirical analysis that taking the bias into account
-improves the confidence estimates, even when the propensity
-scores are not known exactly.
+> Methods for Knowledge Base Completion (KBC) reason about a knowledge base (KB) in order to derive new facts that should be included in the KB. This is challenging for two reasons. First, KBs only contain positive examples. This complicates model evaluation which needs both positive and negative examples. Second, those facts that were selected to be included in the knowledge base, are most likely not an i.i.d. sample of the true facts, due to the way knowledge bases are constructed. In this paper, we focus on rule-based approaches, which traditionally address the first challenge by making assumptions that enable identifying negative examples, which in turn makes it possible to compute a rule’s confidence or precision. However, they largely ignore the second challenge, which means that their estimates of a rule’s confidence can be biased. This paper approaches rule-based KBC through the lens of PU learning, which can cope with both challenges. We make three contributions. (1) We provide a unifying view that formalizes the relationship between multiple existing confidences measures based on (i) what assumption they make about and (ii) how their accuracy depends on the selection mechanism. (2) We introduce two new confidence measures that can mitigate known biases by using propensity scores that quantify how likely a fact is to be included the KB. (3) We show through theoretical and empirical analysis that taking the bias into account improves the confidence estimates, even when the propensity scores are not known exactly.
 
 ## Installation
 
@@ -58,6 +33,7 @@ Create a fresh Python3 environment (3. or higher) and install the following pack
 * tqdm: pretty status bars.
 * unidecode: used when cleaning data.
 * tabulate: for pretty table printouts
+* dask.delayed and dask.distributed: for running experiments using dask 
 
 ### Installing Pylo2:
 
@@ -102,61 +78,45 @@ kbc_e_metrics_src/artificial_bias_experiments/known_prop_scores/scar/experiment_
 
 ## Generating the tables in the paper
 
+### Appendix (Table6) - The non-recursive rules
+
+To obtain the table in the appendix listing all non-recursive rules, run:
+[notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb](notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb)
+which results in the file:
+[amie-rules-non-recursive.tex](tables-appendix/amie-rules-non-recursive.tex)
+
+
+### Table 1 - Results for Q1 & Q2, averaged over all predicates
+
+which results in the file:
+[](tables-experiments/summary/confidence-error-summary-selection-mechanisms.tex)
+
+
+### Table 2 - Aggregated results for Q3
+
+which results in the file:
+[](tables-experiments/SAR-PCA-groups/confidence-error-table-sar-two-subject-groups-pca_version-case-specific_agg-per-p.tex)
+
+### Appendix (Table 3) - Results for Q1 & Q2 averaged per predicate - SCAR_p
+
+[](tables-experiments/SCAR/confidence-error-table-scar-rerun-agg-per-p.tex)
+
+### Appendix (Table 4) - Results for Q1 & Q2 averaged per predicate - SAR_{group}
+
+[](tables-experiments/SAR/confidence-error-table-sar-two-subject-groups-agg-per-p.tex)
+
+### Appendix (Table 5)- Results for Q1 & Q2 averaged per predicate - SAR_{populariy}
+[](tables-experiments/SAR/confidence-error-table-sar-popularity-agg-per-p.tex)
+
+
+
+Notebooks to run:
+
 notebooks/artificial_bias_experiments/paper_tables/generate_rules_latex_table.ipynb
 
 ## Generating the images in the paper
 
-
-### Non-PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per-group i.f.o. changing known propensity scores (Fig 5)
-
-In the paper, Figure 5 shows the behavior of a single non-recursive rule under SCAR-per-predicate and SAR-per-group 
-for the following confidence measures:
-* true confidence `conf(R)`,
-* Inverse propensity weighted confidence estimator `IPW(R)`,
-* CWA-based estimator (*standard confidence*) `CWA(R)`,
-* Inverse-c-weighted CWA-based estimator `ICW(R)`
-
-when varying the known propensity scores.
-To generate this figure, run the following file:
-
-```shell
-artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_run_yago3_10.py
-```
-Amongs others, this results in the following file, which is Figure 5 in the paper: 
-
-![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/cwa_evol_created_haswonprize_created.png)
-
-
-### PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per group i.f.o. changing known propensity scores (Fig 6)
-
-In the paper, Figure 6 shows the behavior of a single non-recursive rule under SCAR-per-predicate and SAR-per-group 
-for the following confidence measures, for both the predicted predicate `p` and its inverse `p^{-1}`:
-* true confidence `conf(R)`:
-  * unmodified
-  * rescaled with bias_{y(s)=0}=\frac{|R|}{|R^{s}_{s}|},
-* PCA-based confidence measure `PCA(R)`,
-* Inverse propensity weighted PCA estimator `IPW_PCA(R)`,
-
-* when varying the known propensity scores.
-
-To generate this figure, run the following file:
-```shell
-artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_run_yago3_10.py
-```
-Amongs others, this results in the following file, which is Figure 5 in the paper: 
-
-![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/pca_evol_diedin_isaffiliatedto.png)
-
-
-### Effect of the bias_e(s) on the (IPW-)PCA estimators under PCA i.f.o. varying propensity scores (Fig. 7)
-Run:
-```shell
-artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combo_for_yago3_10_less_detailed.py
-
-```
-to obtain:
-![](./images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
-
+Instructions on how to generate the images in the paper can be found [here](./notes/how-to-generate-images-in-paper.md).
 
 # Preparation of the "ideal" Yago3_10 KB
 
