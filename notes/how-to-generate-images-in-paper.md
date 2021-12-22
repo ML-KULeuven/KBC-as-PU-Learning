@@ -16,9 +16,9 @@ for the following confidence measures:
 when varying the known propensity scores.
 To generate this figure, run the following file:
 
-```shell
-artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_run_yago3_10.py
-```
+
+[cwa_conf_run_yago3_10.py](../artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_conf_run_yago3_10.py)
+
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
 ![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](../images/github/cwa_evol_created_haswonprize_created.png)
@@ -37,9 +37,9 @@ for the following confidence measures, for both the predicted predicate `p` and 
 * when varying the known propensity scores.
 
 To generate this figure, run the following file:
-```shell
+
 artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_run_yago3_10.py
-```
+
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
 ![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](../images/github/pca_evol_diedin_isaffiliatedto.png)
@@ -47,10 +47,8 @@ Amongs others, this results in the following file, which is Figure 5 in the pape
 
 ### Effect of the bias_e(s) on the (IPW-)PCA estimators under PCA i.f.o. varying propensity scores (Fig. 7)
 Run:
-```shell
-artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combo_for_yago3_10_less_detailed.py
+[plot_combo_for_yago3_10_less_detailed.py](../artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_generation/group_differences/plot_combo_for_yago3_10_less_detailed.py)
 
-```
 to obtain:
 
 ![Effect of the bias_e(s) on the (IPW-)PCA estimators under PCA i.f.o. varying propensity scores](../images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
