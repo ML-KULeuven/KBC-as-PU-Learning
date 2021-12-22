@@ -76,7 +76,7 @@ For a description on how to run the experiments, see [here](./notes/how-to-run-t
 
 ## Generating the tables in the paper
 
-For instructions to generate the tables in the paper from the results, see [here](./notes/how-to-generate-tables-in-paper.md).
+For instructions on how to generate the tables in the paper from the results, see [here](./notes/how-to-generate-tables-in-paper.md).
 
 
 ## Generating the images in the paper
