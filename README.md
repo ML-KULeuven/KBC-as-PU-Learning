@@ -10,6 +10,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/) paper
 * [Abstract](https://github.com/ML-KULeuven/KBC-as-PU-Learning#abstract)
 * [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
 * [Notebooks](https://github.com/ML-KULeuven/KBC-as-PU-Learning#notebooks)
+* [Running the experiemtns](https://github.com/ML-KULeuven/KBC-as-PU-Learning#running-the-experiments)
 * [Generating the tables in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-tables-in-the-paper)
 * [Generating the images in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-images-in-the-paper)
 * [Preparation of the "ideal" Yago3-10 KB](https://github.com/ML-KULeuven/KBC-as-PU-Learning#preparation-of-the-ideal-yago3_10-kb)
@@ -66,16 +67,12 @@ python setup.py install
 
 Different notebooks are provided:
 * [How to run AMIE from Python](./notebooks/amie_general)
-* [The yago3-10 dataset: cleaning & exploartion](./notebooks/amie_general)
+* [The yago3-10 dataset: cleaning & exploration](./notebooks/amie_general)
 * [How to apply a rule to a KB](./notebooks/pandas_rule_evaluation/how_to_apply_a_rule_to_a_pandas_kb.ipynb)
 
-## Files to run for Experiments
+## Running the experiments
 
-### Minimal working examples
-
-kbc_e_metrics_src/artificial_bias_experiments/known_prop_scores/scar/experiment_running/run_exp_min_working_ex.py
-
-
+For a description on how to run the experiments, see [here](./notes/how-to-run-the-experiments.md).
 
 ## Generating the tables in the paper
 
@@ -86,7 +83,7 @@ For instructions to generate the tables in the paper from the results, see [here
 
 Instructions on how to generate the images in the paper can be found [here](./notes/how-to-generate-images-in-paper.md).
 
-# Preparation of the "ideal" Yago3_10 KB
+## Preparation of the "ideal" Yago3_10 KB
 
 In the paper, the experiments are run on a cleaned version of the yago3-10 datasets. 
 The cleaning was done to remove unicode characters that might be incompatible with older prolog engines, 
