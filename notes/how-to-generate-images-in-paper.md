@@ -38,7 +38,7 @@ for the following confidence measures, for both the predicted predicate `p` and 
 
 To generate this figure, run the following file:
 
-artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_run_yago3_10.py
+[pca_conf_run_yago3_10.py](../artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_conf_run_yago3_10.py)
 
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 

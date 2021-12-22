@@ -4,20 +4,18 @@ from typing import List
 
 import pandas as pd
 
-from artificial_bias_experiments.known_prop_scores.sar_two_subject_groups.image_generation.known_prop_scores_sar_generate_images import \
-    _get_rule_wrappers_as_dataframe_known_prop_scores_sar_two_groups
-from artificial_bias_experiments.known_prop_scores.scar.image_generation.known_prop_scores_scar_generate_images import \
-    _get_rule_wrappers_as_dataframe
-from artificial_bias_experiments.images_paper_joint.known_prop_scores_cwa_conf.cwa_conf_joint_images import \
-    generate_cwa_conf_image_scar_and_sar_two_groups
-
+from artificial_bias_experiments.images_paper_joint.known_prop_scores_pca_conf.pca_conf_joint_images import \
+    generate_pca_conf_image_scar_and_sar_two_groups
 from artificial_bias_experiments.known_prop_scores.dataset_generation_file_naming import \
     get_root_dir_experiment_known_propensity_scores
+from artificial_bias_experiments.known_prop_scores.sar_two_subject_groups.image_generation.known_prop_scores_sar_generate_images import \
+    _get_rule_wrappers_as_dataframe_known_prop_scores_sar_two_groups
 from artificial_bias_experiments.known_prop_scores.sar_two_subject_groups.known_prop_scores_sar_two_groups_file_naming import \
     KnownPropScoresSARTwoGroupsFileNamer
+from artificial_bias_experiments.known_prop_scores.scar.image_generation.known_prop_scores_scar_generate_images import \
+    _get_rule_wrappers_as_dataframe
 from artificial_bias_experiments.known_prop_scores.scar.known_prop_scores_scar_file_naming import \
     KnownPropScoresSCARConstantLabelFreqFileNamer
-
 from kbc_pul.project_info import project_dir as kbc_e_metrics_project_dir
 
 
@@ -86,7 +84,7 @@ def generate_images_for_yago3_10():
                                 filter_relation=filter_relation,
                                 filter_group_prop_score=scar_propensity_score
                             )
-                            generate_cwa_conf_image_scar_and_sar_two_groups(
+                            generate_pca_conf_image_scar_and_sar_two_groups(
                                 df_rule_wrappers_scar=df_rule_wrappers_scar,
                                 df_rule_wrappers_sar_two_groups=df_rule_wrappers_sar_two_groups,
                                 target_relation=target_relation,
