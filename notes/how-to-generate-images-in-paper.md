@@ -21,7 +21,7 @@ artificial_bias_experiments/images_paper_joint/known_prop_scores_cwa_conf/cwa_co
 ```
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
-![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/cwa_evol_created_haswonprize_created.png)
+![Non-PCA confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](../images/github/cwa_evol_created_haswonprize_created.png)
 
 
 ### PCA-based confidence measures for a non-recursive rule under SCAR-per-predicate and SAR-per group i.f.o. changing known propensity scores (Fig 6)
@@ -42,7 +42,7 @@ artificial_bias_experiments/images_paper_joint/known_prop_scores_pca_conf/pca_co
 ```
 Amongs others, this results in the following file, which is Figure 5 in the paper: 
 
-![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](./images/github/pca_evol_diedin_isaffiliatedto.png)
+![PCA-based confidence measures for a single non-recursive rule under SCAR-per-predicate and SAR-per-group.](../images/github/pca_evol_diedin_isaffiliatedto.png)
 
 
 ### Effect of the bias_e(s) on the (IPW-)PCA estimators under PCA i.f.o. varying propensity scores (Fig. 7)
@@ -52,4 +52,4 @@ artificial_bias_experiments/known_prop_scores/sar_two_subject_groups/image_gener
 
 ```
 to obtain:
-![](./images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
+![](../images/github/combo_group_info_pca_selection_known_prop_scores_sar_diedin_isaffiliatedto.png)
