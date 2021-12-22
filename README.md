@@ -11,7 +11,7 @@ Source code related to the [AAAI22](https://aaai.org/Conferences/AAAI-22/) paper
 * [Contents of this repository](https://github.com/ML-KULeuven/KBC-as-PU-Learning#contents-of-this-repository)
 * [Installation](https://github.com/ML-KULeuven/KBC-as-PU-Learning#installation)
 * [Notebooks](https://github.com/ML-KULeuven/KBC-as-PU-Learning#notebooks)
-* [Running the experiemtns](https://github.com/ML-KULeuven/KBC-as-PU-Learning#running-the-experiments)
+* [Running the experiments](https://github.com/ML-KULeuven/KBC-as-PU-Learning#running-the-experiments)
 * [Generating the tables in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-tables-in-the-paper)
 * [Generating the images in the paper](https://github.com/ML-KULeuven/KBC-as-PU-Learning#generating-the-images-in-the-paper)
 * [Preparation of the "ideal" Yago3-10 KB](https://github.com/ML-KULeuven/KBC-as-PU-Learning#preparation-of-the-ideal-yago3_10-kb)
